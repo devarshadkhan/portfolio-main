@@ -1,0 +1,725 @@
+.design_projects_frost_glass {
+    overflow: hidden;
+}
+
+.design_projects_section_container {
+    gap: 5rem;
+}
+
+.objects_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.objects_container,
+.above_table_container,
+.table {
+    width: 100%;
+}
+
+.above_table_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: 2rem;
+}
+
+/* Mobile phone: */
+
+.mobile_layout_wrapper {
+    width: 6rem;
+}
+
+.mobile_phone_container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .2rem;
+
+    padding: 4px;
+    height: 160px;
+
+    border-radius: 7px;
+    backdrop-filter: blur(5px);
+
+    border: 1px solid var(--dark-clr-300);
+    background-image: linear-gradient(135deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 15%,
+            rgba(0, 0, 0, 0) 100%);
+
+    box-shadow: 0 0 4px #777777;
+}
+
+.mobile_screen {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    background: #f2f2f2;
+    border-radius: 7px;
+
+    /* overflow: hidden auto; */
+    overflow: hidden;
+}
+
+.mobile_screen {
+    scrollbar-width: none;
+}
+
+.mobile_screen::-webkit-scrollbar {
+    display: none;
+}
+
+.brove {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 45%;
+    height: 8px;
+    border-radius: 0 0 6px 6px;
+
+    background-color: rgb(146 151 179 / 20%);
+    backdrop-filter: blur(5px);
+
+    z-index: var(--z-index-200);
+}
+
+.speaker {
+    width: 50%;
+    height: 25%;
+    background: black;
+    border-radius: 20px;
+}
+
+.mobile_button {
+    width: .7rem;
+    height: .7rem;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.right_side_buttons_container {
+    --height: 4rem;
+
+    position: absolute;
+    top: calc(10% + calc(var(--height) / 2));
+    right: -3%;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: var(--height);
+}
+
+.right_side_btn_1,
+.right_side_btn_2 {
+    width: .15rem;
+
+    border-radius: 15px;
+
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 15%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(5px);
+}
+
+.right_side_btn_1 {
+    height: 60%;
+}
+
+.right_side_btn_2 {
+    height: 30%;
+}
+
+/* Laptop: */
+
+.laptop_layout_wrapper {
+    width: 57%;
+}
+
+.laptop_container {
+    position: relative;
+}
+
+.laptop_screen {
+    position: relative;
+
+    width: 510px;
+    height: 310px;
+
+    margin: 0 auto;
+
+    border-radius: 7px 7px 0 0;
+    border: 1px solid rgba(120, 117, 117, 0.9);
+    border-bottom: none;
+
+    background-image: linear-gradient(135deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 15%,
+            rgba(0, 0, 0, 0) 100%);
+
+    padding: .6em;
+}
+
+.laptop_screen_lcd {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden scroll;
+}
+
+.laptop_screen_lcd::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.laptop_screen_lcd::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 3px lightblue;
+    border-radius: 10px;
+}
+
+.laptop_screen_lcd::-webkit-scrollbar-thumb {
+    outline: 1px solid slategrey;
+
+    background: var(--primary-clr-500);
+    border-radius: 4px;
+
+    cursor: grab;
+}
+
+.laptop_screen_lcd::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-clr-500);
+}
+
+.warning_tooltip {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+
+    width: 75%;
+
+    padding-right: .5em;
+    text-align: center;
+
+    background-color: white;
+    color: black;
+
+    transform: translateX(-50%) scale(0);
+    transition: transform var(--transition-1);
+}
+
+.warning_tooltip.open {
+    transform: translateX(-50%) scale(1);
+}
+
+.warning_msg {
+    padding: .2em;
+    line-height: 1.4;
+
+    pointer-events: none;
+}
+
+.warning_tooltip_close {
+    position: absolute;
+    /* For the font size. */
+    top: calc(0% - 1.3rem);
+    right: 0%;
+
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    color: white;
+}
+
+.laptop_screen_highlight {
+    position: absolute;
+    border-radius: 7px;
+}
+
+.laptop_screen_highlight.one {
+    top: -4px;
+    left: 2%;
+
+    width: 100%;
+    height: 2px;
+
+    background-image: linear-gradient(135deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 15%,
+            rgba(0, 0, 0, 0) 100%);
+}
+
+.laptop_screen_highlight.two {
+    top: 2%;
+    left: -4px;
+
+    width: 2px;
+    height: 100%;
+
+    background-image: linear-gradient(135deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.25) 15%,
+            rgba(0, 0, 0, 0) 100%);
+}
+
+.laptop_screen_highlight.three {
+    top: 2%;
+    right: -4px;
+
+    width: 2px;
+    height: 100%;
+
+    background-image: linear-gradient(135deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.25) 15%,
+            rgba(0, 0, 0, 0) 100%);
+}
+
+.laptop_keyboard {
+    position: relative;
+
+    height: .6rem;
+
+    border-radius: 3px 3px 33% 33%;
+
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 15%,
+            rgba(0, 0, 0, 0) 100%);
+
+    border: 1px solid white;
+    border-top-width: 2px;
+    border-top-style: double;
+    border-top-color: rgba(255, 255, 255, 0.6);
+    border-bottom: none;
+
+    box-shadow: 0 25px 35px -5px #000000;
+}
+
+.laptop_keyboard::before {
+    content: "";
+    position: absolute;
+    top: -24%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    display: inline-block;
+
+    width: 10%;
+    height: 40%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.85) 0%, rgba(0, 0, 0, 0.35) 100%);
+    border-radius: 0 0 0.5vw 0.5vw;
+}
+
+/* Ipad */
+
+.ipad_layout_wrapper {
+    width: 20%;
+}
+
+.ipad_container {
+    position: relative;
+
+    height: 10rem;
+    padding: .5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 7px;
+
+    border: var(--design-section-ipad-container);
+    box-shadow: 0 0 4px #777777;
+}
+
+.design_figma_link_container {
+    position: absolute;
+    left: 50%;
+    bottom: 105%;
+    transform: translateX(-50%);
+
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.design_figma_link {
+    white-space: nowrap;
+    font-family: var(--ff-primary);
+}
+
+.ipad_screen {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+
+    font-family: var(--ff-primary);
+
+    border-radius: 3px;
+
+    background-color: var(--design-section-ipad-screen);
+    backdrop-filter: blur(5px);
+}
+
+.designs_changing_button {
+    padding: 0.5em 1.5em;
+
+    color: var(--inactive-clr-1);
+
+    border-radius: 100vh;
+
+    transition: color 200ms ease-in-out;
+}
+
+.designs_changing_button.active {
+    border: 1px solid var(--border-clr-primary);
+    color: var(--text-clr-1);
+}
+
+.designs_changing_button:hover {
+    color: var(--text-clr-1);
+}
+
+.table {
+    height: .5rem;
+
+    margin: auto;
+
+    border-radius: 100vh;
+    background-color: var(--design-section-ipad-table);
+
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .4);
+}
+
+.sm_mobile_layout_wrapper {
+    display: none;
+}
+
+.mobile_design_thumbnails_container {
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.desktop_design_thumbnails_container {
+    width: 100%;
+}
+
+.first_desktop_design,
+.second_desktop_design,
+.first_mobile_design,
+.second_mobile_design {
+    width: 100%;
+    height: 70rem;
+
+    background-size: cover;
+    background-position: top;
+
+    background-repeat: no-repeat;
+}
+
+.first_mobile_design {
+    background-color: green;
+    background-image: url(../assets/mockups-and-thumbnails/SL--exploria-mobileDesign-min.jpg);
+
+    margin-bottom: .5rem;
+}
+
+.second_mobile_design {
+    background-color: grey;
+    background-image: url(../assets/mockups-and-thumbnails/SL--befit-mobileDesign-min.jpg);
+}
+
+.first_desktop_design {
+    background-color: green;
+    background-image: url(../assets/mockups-and-thumbnails/SL--exploria-desktopDesign-min.jpg);
+
+    margin-bottom: .5rem;
+}
+
+.second_desktop_design {
+    background-color: grey;
+    background-image: url(../assets/mockups-and-thumbnails/SL--befit-desktopDesign-min.jpg);
+}
+
+.pentool_accent_graphic_container {
+    display: none;
+}
+
+@media (min-width: 1450px) {
+    .design_projects_section_container {
+        gap: 6rem;
+    }
+
+    .mobile_layout_wrapper {
+        width: 7.5rem;
+    }
+
+    .right_side_buttons_container {
+        --height: 4.4rem;
+    }
+
+    .right_side_btn_1,
+    .right_side_btn_2 {
+        width: .16rem;
+    }
+
+    .mobile_phone_container {
+        height: 190px;
+    }
+
+    .laptop_layout_wrapper {
+        width: 60%;
+    }
+
+    .laptop_screen {
+        width: 660px;
+        height: 400px;
+    }
+
+    .warning_tooltip_close {
+        /* For the font size. */
+        top: calc(0% - 1.5rem);
+        font-size: 1.5rem;
+    }
+
+    .first_mobile_design {
+        background-image: url(../assets/mockups-and-thumbnails/LL-exploria-mobileDesign-min.jpg);
+    }
+
+    .second_mobile_design {
+        background-image: url(../assets/mockups-and-thumbnails/LL--befit-mobileDesign-min.jpg);
+    }
+
+    .first_desktop_design {
+        background-image: url(../assets/mockups-and-thumbnails/LL--exploria-desktopDesign-min.jpg);
+    }
+
+    .second_desktop_design {
+        background-image: url(../assets/mockups-and-thumbnails/LL--befit-desktopDesign-min.jpg);
+    }
+
+    .ipad_container {
+        height: 11rem;
+    }
+
+    .designs_changing_button {
+        padding: 0.3em 2em;
+    }
+
+    .pentool_accent_graphic_container {
+        display: block;
+
+        position: absolute;
+        bottom: -1%;
+        left: -9%;
+
+        width: 28rem;
+
+        opacity: .25;
+    }
+}
+
+@media (min-width: 1900px) {
+    .design_projects_section_container {
+        gap: 7rem;
+    }
+
+    .mobile_layout_wrapper {
+        width: 8.5rem;
+    }
+
+    .mobile_phone_container {
+        height: 224px;
+    }
+
+    .right_side_buttons_container {
+        --height: 4.8rem;
+    }
+
+    .right_side_btn_1,
+    .right_side_btn_2 {
+        width: .17rem;
+    }
+
+    .laptop_layout_wrapper {
+        width: 64%;
+    }
+
+    .laptop_screen {
+        width: 720px;
+        height: 420px;
+    }
+
+    .first_mobile_design {
+        background-image: url(../assets/mockups-and-thumbnails/M--exploria-mobileDesign-min.jpg);
+    }
+
+    .second_mobile_design {
+        background-image: url(../assets/mockups-and-thumbnails/M--befit-mobileDesign-min.jpg);
+    }
+
+    .first_desktop_design {
+        background-image: url(../assets/mockups-and-thumbnails/M--exploria-desktopDesign-min.jpg);
+    }
+
+    .second_desktop_design {
+        background-image: url(../assets/mockups-and-thumbnails/M--befit-desktopDesign-min.jpg);
+    }
+
+    .designs_changing_button {
+        padding: .5em 2em;
+    }
+
+    .ipad_container {
+        height: 12rem;
+    }
+
+    .pentool_accent_graphic_container {
+        left: -8.5%;
+        width: 35rem;
+    }
+}
+
+@media (max-width: 1050px) {
+    .design_projects_section_container {
+        gap: 4rem;
+    }
+
+    .above_table_container {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .mobile_layout_wrapper,
+    .table {
+        display: none;
+    }
+
+    .laptop_layout_wrapper {
+        width: 650px;
+    }
+
+    .laptop_screen {
+        padding: .3em;
+    }
+
+    .ipad_layout_wrapper {
+        width: fit-content;
+    }
+
+    .ipad_container {
+        height: 7rem;
+        padding: .3em;
+    }
+
+    .ipad_screen {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 0 2em;
+    }
+}
+
+@media (max-width: 750px) {
+    .objects_container {
+        gap: 1rem;
+    }
+
+    .ipad_screen {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 0 1.5em;
+        font-size: .8rem;
+    }
+
+    .mobile_layout_wrapper,
+    .laptop_layout_wrapper,
+    .table {
+        display: none;
+    }
+
+    .sm_mobile_layout_wrapper {
+        display: block;
+
+        width: 240px;
+        height: 50vh;
+    }
+
+    .mobile_phone_container {
+        height: 100%;
+        border-radius: 15px;
+    }
+
+    .mobile_screen {
+        border-radius: 15px;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+
+        overflow: hidden scroll;
+    }
+
+    .first_mobile_design {
+        background-image: url(../assets/mockups-and-thumbnails/SM--exploria-mobileDesign-min.jpg);
+    }
+
+    .second_mobile_design {
+        background-image: url(../assets/mockups-and-thumbnails/SM--befit-mobileDesign-min.jpg);
+    }
+
+    .brove {
+        position: absolute;
+        z-index: 5;
+    }
+
+    .sm_design_thumbnails_container {
+        width: 100%;
+    }
+
+    .mobile_button {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0.2rem 0;
+    }
+
+    .right_side_buttons_container {
+        --height: 8rem;
+        right: -1.5%;
+    }
+
+    .right_side_btn_1,
+    .right_side_btn_2 {
+        width: .2rem;
+        background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.3) 15%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+@media (max-width: 450px) {
+    .sm_mobile_layout_wrapper {
+        width: 230px;
+    }
+
+    .right_side_buttons_container {
+        --height: 7rem;
+    }
+}

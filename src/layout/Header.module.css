@@ -1,0 +1,150 @@
+.primary_header {
+    width: 90%;
+    max-width: 86rem;
+
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: var(--z-index-500);
+}
+
+.header_logo_container {
+    width: 4.3rem;
+    cursor: pointer;
+}
+
+.floating_nav_wrapper {
+    border-radius: 100vh;
+    backdrop-filter: blur(10px);
+}
+
+.floating_nav_container {
+    display: flex;
+    align-items: center;
+
+    padding: .4em .6em;
+
+    transition: opacity var(--transition-1);
+}
+
+.floating_nav_container.hide_navbar {
+    opacity: 0;
+}
+
+.floating_nav_container.remove_navbar {
+    display: none;
+}
+
+.navlink_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.navlink {
+    padding: .2em 1em;
+    transition: color 250ms ease-in-out;
+}
+
+.navlink.active {
+    font-weight: 600;
+}
+
+.navlink:not(.active):hover {
+    color: var(--navlink-hover);
+}
+
+.theme_toggle_icon_container {
+    width: 1.3rem;
+    cursor: pointer;
+}
+
+@media (min-width: 1450px) {
+    .header_logo_container {
+        width: 5.5rem;
+    }
+
+    .floating_nav_container {
+        padding: .45em .7em;
+    }
+
+    .navlink {
+        padding: .3em 1.2em;
+    }
+
+    .theme_toggle_icon_container {
+        width: 1.5rem;
+    }
+}
+
+@media (min-width: 1900px) {
+    .header_logo_container {
+        width: 6rem;
+    }
+
+    .floating_nav_container {
+        padding: .45em .8em;
+    }
+
+    .navlink {
+        padding: .4em 1.3em;
+    }
+
+    .theme_toggle_icon_container {
+        width: 1.7rem;
+    }
+}
+
+@media (max-width: 1050px) {
+    .header_logo_container {
+        width: 4rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .primary_header {
+        width: 85%;
+    }
+    
+    .header_logo_container {
+        width: 3.5rem;
+    }
+
+    .floating_nav_container {
+        font-size: .8rem;
+    }
+
+    .navlink {
+        padding: 0.2em 0.8em;
+    }
+
+    .theme_toggle_icon_container {
+        width: 1.1rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .header_logo_container {
+        width: 3rem;
+    }
+
+    .primary_header {
+        top: 8%;
+    }
+
+    .floating_nav_container {
+        font-size: .7rem;
+    }
+
+    .navlink {
+        padding: 0.5em 0.8em;
+    }
+}

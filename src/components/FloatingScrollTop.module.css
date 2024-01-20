@@ -1,0 +1,92 @@
+.scroll_top_container {
+    width: 3rem;
+    height: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    bottom: 3%;
+    right: 2.7%;
+
+    cursor: pointer;
+    z-index: var(--z-index-500);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity var(--transition-1);
+}
+
+.scroll_top_container.appear {
+    opacity: 1;
+    visibility: visible;
+}
+
+.svg_circle_container {
+    width: 100%;
+    height: 100%;
+
+    transform: rotate(-90deg);
+}
+
+.svg_circle {
+    width: 100%;
+    stroke: var(--light-clr-500);
+    stroke-dashoffset: 0;
+    stroke-width: 10%;
+    fill: none;
+}
+
+.bg_transparent {
+    opacity: 0.3;
+}
+
+.up_arrow_container {
+    width: 40%;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 1450px) {
+    .scroll_top_container {
+        width: 3.5rem;
+        height: 3.5rem;
+        right: 2.5%;
+    }
+}
+
+@media (min-width: 1900px) {
+    .scroll_top_container {
+        width: 4rem;
+        height: 4rem;
+        right: 2%;
+        bottom: 2.5%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .scroll_top_container {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+@media (max-width: 750px) {}
+
+@media (max-width: 450px) {
+    .scroll_top_container {
+        width: 2rem;
+        height: 2rem;
+
+        right: 4%;
+    }
+}

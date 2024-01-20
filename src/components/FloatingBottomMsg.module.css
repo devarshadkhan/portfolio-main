@@ -1,0 +1,184 @@
+.floating_icon_msg_container {
+    width: 3.8rem;
+    height: 3.8rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    bottom: 3%;
+    right: 2.7%;
+
+    z-index: var(--z-index-500);
+
+    transform: scale(0);
+    transition: transform var(--transition-1);
+}
+
+.floating_icon_msg_container.appear {
+    transform: scale(1);
+}
+
+.floating_icon_msg_container::before {
+    content: attr(data-floating-message);
+
+    width: var(--width);
+
+    position: absolute;
+    bottom: 110%;
+    right: 0;
+
+    padding: .2em .5em;
+
+    font-family: var(--ff-primary);
+    font-size: .7rem;
+    border-radius: 2px;
+    line-height: 1.4;
+
+    background-color: black;
+    color: white;
+
+    user-select: none;
+    pointer-events: none;
+
+    z-index: 1;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-1);
+}
+
+.floating_icon_msg_container::after {
+    content: '';
+
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 0;
+
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgb(146 151 179 / 20%);
+    border-top: 10px solid var(--glass-solid-bg-1);
+    border-top: 10px solid black;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-1);
+}
+
+.floating_icon_msg_container:hover::before, .floating_icon_msg_container:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.floating_icon_msg_container.show_msg::before,
+.floating_icon_msg_container.show_msg::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.svg_progress {
+    width: 100%;
+    transform: rotate(-90deg);
+}
+
+.progress_circle {
+    stroke: var(--light-clr-500);
+    stroke-dashoffset: 0;
+    stroke-width: 10%;
+    fill: none;
+}
+
+.bg_transparent {
+    opacity: 0.3;
+}
+
+.avatar_container {
+    width: 70%;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floating_self_avatar.disappear {
+    display: none;
+}
+
+.floating_msg_up_arrow {
+    width: 60%;
+    display: none;
+}
+
+.floating_msg_up_arrow.appear {
+    display: block;
+    cursor: pointer;
+}
+
+@media (min-width: 1450px) {
+    .floating_icon_msg_container {
+        width: 4.2rem;
+        height: 4.2rem;
+        right: 2.5%;
+    }
+
+    .floating_icon_msg_container::before {
+        padding: .4em .6em;
+        font-size: .8rem;
+    }
+}
+
+@media (min-width: 1900px) {
+    .floating_icon_msg_container {
+        width: 4.5rem;
+        height: 4.5rem;
+        right: 2%;
+        bottom: 2.5%;
+    }
+
+    .floating_icon_msg_container::before {
+        font-size: .88rem;
+    }
+}
+
+@media (max-width: 1050px) {
+    .floating_icon_msg_container {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .floating_icon_msg_container::before {
+        width: 55vw;
+        padding: .4em .6em;
+
+        font-size: .6rem;
+        border-radius: 2px;
+    }
+}
+
+@media (max-width: 750px) {
+    .floating_icon_msg_container {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .floating_icon_msg_container::before {
+        font-size: .5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .floating_icon_msg_container {
+        right: 4%;
+    }
+}

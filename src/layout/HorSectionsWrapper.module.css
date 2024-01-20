@@ -1,0 +1,30 @@
+.hor_sections_wrapper {
+    height: 100vh;
+    width: 100vw;
+
+    overflow: hidden scroll;
+}
+
+.hor_sections_wrapper.stop_scrolling {
+    overflow: hidden;
+}
+
+.hor_sections_wrapper {
+    scrollbar-width: none;
+}
+
+.hor_sections_wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.double_viewport_scroller {
+    position: relative;
+
+    height: 200vh;
+    width: 100vw;
+}
+
+.sticky_container {
+    position: sticky;
+    top: 0;
+}

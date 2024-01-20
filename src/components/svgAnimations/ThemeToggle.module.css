@@ -1,0 +1,25 @@
+.theme_toggle_svg {
+    width: 100%;
+
+    stroke: var(--first-frost-layer-bg);
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    fill: none;
+    cursor: pointer;
+
+    transform: rotate(40deg);
+}
+
+.center_circle {
+    fill: rgb(233, 245, 9);
+}
+
+.sunray_container {
+    stroke: rgb(242, 255, 0);
+}
+
+.theme_toggle_light_theme .center_circle {
+    fill: var(--secondary-clr-text-1);
+}

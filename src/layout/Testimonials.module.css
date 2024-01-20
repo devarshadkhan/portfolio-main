@@ -1,0 +1,411 @@
+.testimonials_frost_glass {
+    overflow: hidden;
+}
+
+.testimonials_section_container {
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.testimonials_layout_wrapper {
+    position: relative;
+
+    width: 75%;
+
+    height: min(60vh, 390px);
+
+    display: flex;
+    gap: .5rem;
+}
+
+.testimonials_layout_wrapper::before {
+    content: '';
+
+    position: absolute;
+    top: 8%;
+    left: -1.5%;
+
+    width: 96%;
+    height: 96%;
+
+    border: 1.5px solid var(--frost-light-bg-1);
+    border-bottom-left-radius: 4px;
+
+    z-index: -1;
+}
+
+.testimonial_layout_left_container {
+    position: relative;
+    flex: 1;
+
+    border-radius: 4px;
+    backdrop-filter: initial;
+
+    background: var(--glass-solid-bg-1);
+    box-shadow: 0 35px 25px -35px rgba(0, 0, 0, .3);
+}
+
+.testimonial_layout_left_container::before,
+.testimonial_layout_left_container::after {
+    content: '';
+
+    position: absolute;
+    top: 90%;
+    bottom: 6%;
+
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .35);
+    z-index: -1;
+}
+
+.testimonial_layout_left_container::before {
+    left: 5px;
+    right: 45px;
+    transform: rotate(-3deg);
+}
+
+.testimonial_layout_left_container::after {
+    left: 45px;
+    right: 5px;
+    transform: rotate(3deg);
+}
+
+.testimonial_layout_row {
+    position: relative;
+
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+}
+
+.testimonial_container {
+    width: 90%;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.testimonial_text {
+    width: 80%;
+    font-family: var(--ff-primary);
+}
+
+.person_layout_wrapper {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+.person_pic {
+    --border: 3px;
+    --color1: #6be89b;
+    --color2: #0076a5;
+    --color1: var(--primary-clr-200);
+    --color2: var(--secondary-clr-text-2);
+    --from: 30deg;
+    --distance: 60%;
+
+    position: relative;
+    padding: 8px;
+
+    width: 5rem;
+    height: 5rem;
+}
+
+.person_pic::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    border-radius: 999px;
+    border-radius: 50%;
+
+    background: conic-gradient(from var(--from),
+            var(--color1),
+            var(--color2) var(--distance),
+            transparent var(--distance));
+    -webkit-mask: radial-gradient(farthest-side,
+            transparent calc(100% - var(--border)),
+            #fff calc(100% - var(--border) + 1px));
+    mask: radial-gradient(farthest-side,
+            transparent calc(100% - var(--border)),
+            #fff calc(100% - var(--border) + 1px));
+}
+
+.person_pic img {
+    border-radius: 50%;
+}
+
+.person_info {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    justify-content: space-around;
+}
+
+.person_name {
+    font-weight: bolder;
+    font-family: var(--ff-primary);
+}
+
+.person_social_links_container {
+    display: flex;
+    gap: 1rem;
+}
+
+.person_social_links_container a::before,
+.person_social_links_container a::after {
+    top: 100%;
+    height: 3.5px;
+}
+
+.arrows_container {
+    position: absolute;
+    right: 5%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    z-index: 1;
+}
+
+.up_chevron_container,
+.down_chevron_container {
+    padding: .5em;
+    transition: transform var(--transition-1);
+}
+
+.up_chevron_container svg,
+.down_chevron_container svg {
+    width: 1.3rem;
+}
+
+.up_chevron_container:active,
+.down_chevron_container:active {
+    transform: scale(1.3);
+}
+
+.testimonial_layout_dots_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: .5rem;
+}
+
+.testimonial_dot_wrapper {
+    padding: .5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.testimonial_dot_wrapper.active {
+    outline: 2px solid var(--frost-light-bg-1);
+}
+
+.testimonial_dot {
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background-color: var(--secondary-clr-dark-background-1);
+
+    transition: background-color var(--transition-1);
+}
+
+.testimonial_dot_wrapper:not(.active):hover .testimonial_dot {
+    background-color: var(--secondary-clr-text-2);
+}
+
+.testimonial_accent_graphic_container {
+    display: none;
+}
+
+@media (min-width: 1450px) {
+    .testimonials_section_container {
+        gap: 3rem;
+    }
+
+    .testimonials_layout_wrapper {
+        width: 77%;
+        height: min(60vh, 420px);
+        gap: .7rem;
+    }
+
+    .person_layout_wrapper {
+        gap: 1rem;
+    }
+
+    .person_pic {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .person_social_links_container {
+        gap: 1.5rem;
+    }
+
+    .up_chevron_container svg,
+    .down_chevron_container svg {
+        width: 1.5rem;
+    }
+
+    .testimonial_layout_dots_container {
+        gap: .7rem;
+    }
+
+    .testimonial_dot {
+        width: .6rem;
+        height: .6rem;
+    }
+
+    .testimonial_accent_graphic_container {
+        display: block;
+
+        position: absolute;
+        bottom: -4%;
+        left: -3%;
+
+        width: 12rem;
+
+        opacity: .16;
+    }
+}
+
+@media (min-width: 1900px) {
+    .testimonials_section_container {
+        gap: 4rem;
+    }
+
+    .testimonials_layout_wrapper {
+        width: 80%;
+        height: min(60vh, 500px);
+        gap: 1rem;
+    }
+
+    .testimonials_layout_wrapper::before {
+        top: 10%;
+        left: -2%;
+    }
+
+    .person_pic {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .person_info {
+        gap: .2rem;
+    }
+
+    .person_social_links_container {
+        gap: 1.2rem;
+    }
+
+    .up_chevron_container svg,
+    .down_chevron_container svg {
+        width: 2rem;
+    }
+
+    .testimonial_layout_dots_container {
+        gap: .9rem;
+    }
+
+    .testimonial_dot {
+        width: .8rem;
+        height: .8rem;
+    }
+
+    .testimonial_accent_graphic_container {
+        width: 20rem;
+        bottom: -6%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .testimonials_layout_wrapper {
+        width: 90%;
+    }
+
+    .testimonial_container {
+        width: 85%;
+        gap: 2rem;
+    }
+
+    .person_info {
+        gap: 0.2rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .testimonials_layout_wrapper {
+        height: min(75%, 500px);
+        flex-direction: column;
+        gap: 1rem;
+
+        width: 100%;
+    }
+
+    .testimonials_layout_wrapper::before {
+        top: 6.5%;
+        left: -3.5%;
+    }
+
+    .testimonial_layout_left_container::before,
+    .testimonial_layout_left_container::after {
+        bottom: 3%;
+    }
+
+    .testimonial_layout_left_container::before {
+        transform: rotate(-3deg);
+    }
+
+    .testimonial_layout_left_container::after {
+        transform: rotate(3deg);
+    }
+
+    .testimonial_text {
+        width: 100%;
+    }
+
+    .arrows_container {
+        bottom: 3%;
+        gap: .5rem;
+    }
+
+    .up_chevron_container svg,
+    .down_chevron_container svg {
+        width: 1.1rem;
+    }
+
+    .testimonial_layout_dots_container {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .testimonial_layout_left_container::before {
+        transform: rotate(-5deg);
+    }
+
+    .testimonial_layout_left_container::after {
+        transform: rotate(5deg);
+    }
+}

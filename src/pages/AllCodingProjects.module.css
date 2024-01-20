@@ -1,0 +1,58 @@
+.all_coding_projects_page_main {
+    /* For the frost_glass: */
+    padding: 1em 2em;
+}
+
+.all_coding_projects_page_frost_glass {
+    min-height: calc(100vh - 2em);
+}
+
+.all_coding_projects_section_container {
+    justify-content: flex-start;
+}
+
+.portfolio_coding_project .project_logo_container {
+    width: 5rem;
+}
+
+.portfolio_coding_project .project_thumbnail {
+    background-image: url(../assets/mockups-and-thumbnails/SL--portfolio-mockups-min.png);
+}
+
+@media (min-width: 1450px) {
+    .portfolio_coding_project .project_logo_container {
+        width: 6rem;
+    }
+
+    .portfolio_coding_project .project_thumbnail {
+        background-image: url(../assets/mockups-and-thumbnails/M--portfolio-mockups-min.png);
+    }
+}
+
+@media (min-width: 1900px) {}
+
+@media (max-width: 1050px) {
+    .all_coding_projects_page_main {
+        padding: .5em 1em;
+    }
+
+    .project_content_row {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio_coding_project.project_content_row {
+        flex-direction: column;
+    }
+
+    .portfolio_coding_project .project_logo_container {
+        width: 4rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .portfolio_coding_project .project_thumbnail {
+        background-image: url(../assets/mockups-and-thumbnails/LM--portfolio-mockups-min.png);
+    }
+}
+
+@media (max-width: 450px) {}

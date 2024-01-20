@@ -1,0 +1,280 @@
+.coding_projects_section {
+    height: auto;
+}
+
+.project_content_row {
+    position: relative;
+
+    height: 70vh;
+    max-height: 550px;
+
+    display: flex;
+}
+
+.project_content_container {
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    z-index: var(--z-index-100);
+}
+
+.project_logo_container {
+    width: 8rem;
+}
+
+.xmart_coding_project .project_logo_container {
+    width: 9rem;
+}
+
+.project_links_container {
+    display: flex;
+    gap: 2.2rem;
+
+    margin-top: .5rem;
+
+    font-family: var(--ff-primary);
+}
+
+.project_thumbnail {
+    position: relative;
+
+    width: 60%;
+    height: 90%;
+
+    overflow: hidden;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.xmart_coding_project .project_thumbnail {
+    background-image: url(../assets/mockups-and-thumbnails/SL--xmart-mockups-min.png);
+}
+
+.bookings_coding_project .project_thumbnail {
+    height: 80%;
+    background-image: url(../assets/mockups-and-thumbnails/SL--bookings-mockup-min.png);
+}
+
+.intervutracr_coding_project .project_thumbnail {
+    background-image: url(../assets/mockups-and-thumbnails/SL--intervutracr-mockups-min.png);
+}
+
+.project_thumbnail::before,
+.project_thumbnail::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    transform-origin: center top;
+}
+
+.project_thumbnail::before {
+    background-color: var(--coding-section-mockup-before);
+    transition: transform 600ms ease-out 300ms;
+}
+
+.project_thumbnail::after {
+    background-color: var(--coding-section-mockup-after);
+    transition: transform 500ms ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .project_thumbnail::before,
+    .project_thumbnail::after {
+        content: none;
+    }
+}
+
+.appear.project_thumbnail::before,
+.appear.project_thumbnail::after {
+    transform: scaleY(0);
+}
+
+.project_content_container,
+.project_thumbnail {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.project_content_container.left_aligned {
+    left: 10%;
+}
+
+.project_content_container.right_aligned {
+    right: 8%;
+}
+
+.project_thumbnail.left_aligned {
+    left: 0;
+}
+
+.project_thumbnail.right_aligned {
+    right: 0%;
+}
+
+.more_projects_layout_wrapper {
+    position: relative;
+    height: 2rem;
+
+    margin-top: 3rem;
+
+    font-family: var(--ff-primary);
+}
+
+.more_projects_links_container {
+    position: absolute;
+    left: 10%;
+
+    display: flex;
+    gap: 3rem;
+}
+
+@media (min-width: 1450px) {
+    .project_logo_container {
+        width: 10rem;
+    }
+
+    .project_links_container {
+        gap: 2.8rem;
+    }
+
+    .xmart_coding_project .project_thumbnail {
+        background-image: url(../assets/mockups-and-thumbnails/M--xmart-mockups-min.png);
+    }
+
+    .bookings_coding_project .project_thumbnail {
+        height: 75%;
+        background-image: url(../assets/mockups-and-thumbnails/M--bookings-mockup-min.png);
+    }
+
+    .intervutracr_coding_project .project_thumbnail {
+        background-image: url(../assets/mockups-and-thumbnails/M--intervutracr-mockups-min.png);
+    }
+
+    .project_content_container.left_aligned {
+        left: 9%;
+    }
+
+    .project_content_container.right_aligned {
+        right: 7%;
+    }
+
+    .more_projects_layout_wrapper {
+        margin: 3rem 0 1rem;
+    }
+
+    .more_projects_links_container {
+        left: 9%;
+    }
+}
+
+@media (min-width: 1900px) {
+    .project_content_container.left_aligned {
+        left: 8%;
+    }
+
+    .project_content_container.right_aligned {
+        right: 6%;
+    }
+
+    .more_projects_links_container {
+        left: 8%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .coding_section_headings_container {
+        top: 5%;
+        margin-bottom: 1rem;
+    }
+
+    .project_content_row {
+        height: auto;
+        flex-direction: column-reverse;
+        margin-bottom: 3rem;
+    }
+
+    .bookings_coding_project.project_content_row {
+        flex-direction: column;
+    }
+
+    .project_content_container,
+    .project_thumbnail {
+        position: static;
+        transform: translateY(0%);
+    }
+
+    .project_thumbnail {
+        width: 100%;
+        height: 60%;
+
+        background-position: center;
+
+        /* Cuz of the second project's height */
+        height: 15rem !important;
+    }
+
+    .project_content_container {
+        width: 100%;
+
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .project_logo_container {
+        width: 6rem;
+    }
+
+    .xmart_coding_project .project_logo_container {
+        width: 7rem;
+    }
+
+    .project_links_container {
+        font-size: .7rem;
+    }
+
+    .more_projects_layout_wrapper {
+        height: 4rem;
+        text-align: center;
+    }
+
+    .more_projects_links_container {
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        gap: .7rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .xmart_coding_project .project_thumbnail {
+        background-image: url(../assets/mockups-and-thumbnails/LM--xmart-mockups-min.png);
+    }
+
+    .bookings_coding_project .project_thumbnail {
+        background-image: url(../assets/mockups-and-thumbnails/LM--bookings-mockup-min.png);
+    }
+
+    .intervutracr_coding_project .project_thumbnail {
+        background-image: url(../assets/mockups-and-thumbnails/LM--intervutracr-mockups-min.png);
+    }
+}
+
+@media (max-width: 450px) {}
